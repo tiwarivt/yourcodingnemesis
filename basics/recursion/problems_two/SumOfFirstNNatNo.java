@@ -1,18 +1,20 @@
 package basics.recursion.problems_two;
 
-public class SumOfFirstNNatNo {
-    static int s = 1;
 
-    private static int sum(int n) {
-        if (n == 1) {
-            return s;
+//parameterised way of recursion
+public class SumOfFirstNNatNo {
+
+    private static void sum(int n, int s) {
+        if (n < 1) {
+            System.out.println(s);
+            return;
         }
-        s = sum(n) + sum(n - 1);
-        return s;
+        sum(n - 1, s + n);
+        return;
     }
 
     public static void main(String[] args) {
         int n = 10;
-        System.out.println(sum(n));
+        sum(n, 0);
     }
 }
