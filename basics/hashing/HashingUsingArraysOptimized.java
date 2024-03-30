@@ -1,15 +1,18 @@
 package basics.hashing;
 
-import java.util.Arrays;
-
 public class HashingUsingArraysOptimized {
 
     private static void hashing(int[] arr) {
+        //create an array to hash the values of the sample array
         int[] freq = new int[3];
+        //store the freq of each element in the hash array
         for (int i = 0; i < arr.length; i++) {
             freq[arr[i]]++;
         }
-        System.out.println(Arrays.toString(freq));
+        //print the frequency of each array element
+        for (int i = 0; i < freq.length; i++) {
+            System.out.println("# of " + i + "'s: " + freq[i]);
+        }
     }
 
     public static void main(String[] args) {
